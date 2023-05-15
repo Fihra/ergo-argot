@@ -6,8 +6,8 @@ const List = () => {
     const { currentList } = useWord();
 
     const showList = () => {
-        return currentList.map((word) => {
-            return <WordCard word={word}/>
+        return currentList.map((word, key) => {
+            return <WordCard key={key} word={word}/>
         })
     }
 
