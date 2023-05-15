@@ -1,11 +1,38 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import React, {useState} from 'react';
 
-export default function App() {
+const App = () => {
+  const [text, setText] = useState('');
+  const [list, setList] = useState([]);
+
+  const handleSubmit = () => {
+    setList(array => [...array, text])
+  }
+  
+  const showList = () => {
+    return list.map((word, key) => {
+        return <Text key={key}>{word}</Text>
+      })
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.title}>Ergo Argot</Text>
+      <View style={{flexDirection: 'row'}}>
+      <TextInput
+        style={{height: 40}}
+        placeholder="Search me up"
+        onChangeText={newText => setText(newText)}
+        default={text}
+        value={text}
+      />
+      <Button onPress={handleSubmit} title="Enter"></Button>
+      </View>
+      <Text>Past Searches:</Text>
+      <View style={{flex: 1, margin: 10}}>
+      {showList()}
+      </View>
     </View>
   );
 }
@@ -17,4 +44,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold'
+  }
 });
+
+export default App;
