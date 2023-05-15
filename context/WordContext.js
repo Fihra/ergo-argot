@@ -19,11 +19,19 @@ export const WordProvider = ({ children }) => {
         })
     }
 
+    const addWord = (newWord) => {
+        dispatch({
+            type:ACTIONS.ADD_WORD,
+            payload: { word: newWord }
+        })
+    }
+
     const value = {
         data: state.data,
         currentList: state.currentList,
         currentWord: state.currentWord,
         setWord,
+        addWord,
         fetchData,
     }
 
