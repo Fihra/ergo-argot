@@ -2,14 +2,23 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import React, {useState} from 'react';
 import axios from 'axios';
+import { REACT_APP_API_URL, REACT_APP_KEY, REACT_APP_HOST } from '@env';
 
 const App = () => {
   const [text, setText] = useState('');
   const [list, setList] = useState([]);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if(!list.includes(text)){
       setList(array => [...array, text]);
+
+      try {
+        const response = await axios.request(fetchWord(text));
+        console.log(response.data);
+      } catch(error) {
+        console.log(error);
+      }
+
     }
   }
   
@@ -19,6 +28,23 @@ const App = () => {
         return <Text key={key}>{word}</Text>
       })
   }
+
+  const fetchWord = (word) => {
+
+    const wordOption = {
+      method: 'GET',
+      url: REACT_APP_API_URL,
+      params: {term: word},
+      headers: {
+        'X-RapidAPI-Key': REACT_APP_KEY,
+        'X-RapidAPI-Host': REACT_APP_HOST
+      }
+  
+    }
+    return wordOption;
+}
+
+
 
   return (
     <View style={styles.container}>
