@@ -1,10 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import axios from 'axios';
 import { REACT_APP_API_URL, REACT_APP_KEY, REACT_APP_HOST } from '@env';
+import List from './components/List';
+import WordInput from './components/WordInput';
+import WordCard from './components/WordCard';
+import useWord, { WordContext, WordProvider } from './context/WordContext';
 
 const App = () => {
+  const words = useContext(WordContext);
+
   const [text, setText] = useState('');
   const [list, setList] = useState([]);
 
@@ -44,25 +50,27 @@ const App = () => {
     return wordOption;
 }
 
-
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Ergo Argot</Text>
+      <WordProvider>
       <View style={{flexDirection: 'row'}}>
-      <TextInput
-        style={{height: 40}}
-        placeholder="Search me up"
-        onChangeText={newText => setText(newText)}
-        default={text}
-        value={text}
-      />
-      <Button onPress={handleSubmit} title="Enter"></Button>
-      </View>
-      <Text>Past Searches:</Text>
-      <View style={{flex: 1, margin: 10}}>
-      {showList()}
-      </View>
+        {/* <TextInput
+          style={{height: 40}}
+          placeholder="Search me up"
+          onChangeText={newText => setText(newText)}
+          default={text}
+          value={text}
+        />
+        <Button onPress={handleSubmit} title="Enter"></Button>
+        </View>
+        <Text>Past Searches:</Text>
+        <View style={{flex: 1, margin: 10}}>
+        {showList()} */}
+        <WordInput/>
+        <List/>
+        </View>
+      </WordProvider>
     </View>
   );
 }
