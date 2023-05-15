@@ -1,17 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import React, {useState} from 'react';
+import axios from 'axios';
 
 const App = () => {
   const [text, setText] = useState('');
   const [list, setList] = useState([]);
 
   const handleSubmit = () => {
-    setList(array => [...array, text])
+    if(!list.includes(text)){
+      setList(array => [...array, text]);
+    }
   }
   
   const showList = () => {
-    return list.map((word, key) => {
+    const reverseList = [...list].reverse();
+    return reverseList.map((word, key) => {
         return <Text key={key}>{word}</Text>
       })
   }
