@@ -1,27 +1,24 @@
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import useWord from '../context/WordContext';
 import { REACT_APP_API_URL, REACT_APP_KEY, REACT_APP_HOST } from '@env';
+import axios from 'axios';
 
 const WordInput = () => {
-    const { setWord, currentList, currentWord } = useWord();
+    const { setWord, addWord, currentList, currentWord, fetchData } = useWord();
 
     const handleSubmit = async () => {
         if(!currentList.includes(currentWord)){
-        //   setList(array => [...array, text]);
-        //   try {
-        //     const response = await axios.request(fetchWord(text));
-        //     console.log(response.data);
-        //   } catch(error) {
-        //     console.log(error);
-        //   }
-    
+            addWord(currentWord);
+          try {
+            const response = await axios.request(fetchWord(currentWord));
+            fetchData(response.data);
+          } catch(error) {
+            console.log(error);
+          }
         }
     }
 
-    console.log(currentWord);
-
     const fetchWord = (word) => {
-
         const wordOption = {
           method: 'GET',
           url: REACT_APP_API_URL,
@@ -30,7 +27,6 @@ const WordInput = () => {
             'X-RapidAPI-Key': REACT_APP_KEY,
             'X-RapidAPI-Host': REACT_APP_HOST
           }
-      
         }
         return wordOption;
     }
