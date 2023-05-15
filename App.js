@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View} from 'react-native';
+import { Text, View} from 'react-native';
+import styles from './components/styles';
 import React from 'react';
 import List from './components/List';
 import WordInput from './components/WordInput';
@@ -9,6 +10,7 @@ import { WordProvider } from './context/WordContext';
 const App = () => {
   return (
     <View style={styles.container}>
+      <StatusBar hidden={false}/>
       <Text style={styles.title}>Ergo Argot</Text>
       <WordProvider>
       <View style={{}}>
@@ -20,18 +22,5 @@ const App = () => {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold'
-  }
-});
 
 export default App;
