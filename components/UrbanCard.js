@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, TextInput, Button, Linking } from 'react-native';
+import { Text, View, Button, Linking } from 'react-native';
 import useWord from '../context/WordContext';
+import styles from './styles';
 
 const UrbanCard = () => {
     const { data } = useWord();
@@ -7,7 +8,7 @@ const UrbanCard = () => {
     const showCard = () => {
         if(data !== "") {
             return (
-                <View>
+                <View style={styles.container}>
                 <Text>Word: {data.list[0].word}</Text>
                 <Text>Definition: {data.list[0].definition}</Text>
                 <Text>Example: {data.list[0].example}</Text>
