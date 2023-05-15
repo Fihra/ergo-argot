@@ -1,1 +1,1 @@
-# ergo-argot
+# Ergo Argot
