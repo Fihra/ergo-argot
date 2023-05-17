@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import { Text, View} from 'react-native';
 import styles from './components/styles';
@@ -9,17 +10,19 @@ import { WordProvider } from './context/WordContext';
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <StatusBar hidden={false}/>
-      <Text style={styles.title}>Ergo Argot</Text>
-      <WordProvider>
-      <View style={{}}>
-        <UrbanCard/>
-        <WordInput/>
-        <List/>
-        </View>
-      </WordProvider>
-    </View>
+
+      <View style={styles.container}>
+        <StatusBar hidden={false}/>
+        <Text style={styles.title}>Ergo Argot</Text>
+        <WordProvider>
+        <View>
+          <UrbanCard/>
+          <WordInput/>
+          <List/>
+          </View>
+        </WordProvider>
+      </View>
+
   );
 }
 
