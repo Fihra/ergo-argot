@@ -13,9 +13,12 @@ const Topbar = () => {
         <View>
             <Text onPress={() => setOpen((prevOpen) => !prevOpen)} title={`${open ? 'Close' : 'Open'} drawer`}>
                 <FontAwesomeIcon icon={faBars} size="2x" style={{marginLeft: "60vw"}}/>
+                <View>
+                  <Text>Drawer Content</Text>
+                </View>
             </Text>
-          <Text>Drawer Content</Text>
-      </View>
+         </View>
+
       )
     } else {
       return;
@@ -29,18 +32,20 @@ const Topbar = () => {
     //     <FontAwesomeIcon icon={faBars} size="3x" style={{marginRight: "80vw"}}/>
     //   </Text>
     // </View>
+    <View style={{position: "absolute"}}>
     <Drawer
     open={open}
     onOpen={() => setOpen(true)}
     onClose={() => setOpen(false)}
     renderDrawerContent={() => showText()}
-    drawerStyle={{position: "absolute"}}
+    overlayStyle={{height: "80vw"}}
   >
     <Text onPress={() => setOpen((prevOpen) => !prevOpen)}
       title={`${open ? 'Close' : 'Open'} drawer`}>
       <FontAwesomeIcon icon={faBars} size="2x" style={{marginRight: "80vw"}}/>
     </Text>
   </Drawer>
+  </View>
   )
 };
 
