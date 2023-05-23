@@ -2,6 +2,8 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import useWord from '../context/WordContext';
 import { REACT_APP_API_URL, REACT_APP_KEY, REACT_APP_HOST } from '@env';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const WordInput = () => {
     const { setWord, addWord, currentList, currentWord, fetchData } = useWord();
@@ -34,13 +36,16 @@ const WordInput = () => {
   return (
     <View style={{flexDirection: 'row'}}>
         <TextInput
-        style={{}}
+        style={{padding: 12}}
         placeholder="Search me up"
         onChangeText={newText => setWord(newText)}
         default={currentWord}
         value={currentWord}
         />
-        <Button onPress={handleSubmit} title="Enter"></Button>
+        <Text onPress={handleSubmit}>
+        <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" style={{marginLeft: 12, marginTop: 4}}/>
+        </Text>
+        {/* <Button style={{marginLeft: 12}} onPress={handleSubmit} title="Search"></Button> */}
     </View>
 
   )
