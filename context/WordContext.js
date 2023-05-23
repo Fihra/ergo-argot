@@ -21,8 +21,15 @@ export const WordProvider = ({ children }) => {
 
     const addWord = (newWord) => {
         dispatch({
-            type:ACTIONS.ADD_WORD,
+            type: ACTIONS.ADD_WORD,
             payload: { word: newWord }
+        })
+    }
+
+    const deleteWord = (deletedWord) => {
+        dispatch({
+            type: ACTIONS.DELETE_WORD,
+            payload: { word: deletedWord}
         })
     }
 
@@ -33,6 +40,7 @@ export const WordProvider = ({ children }) => {
         setWord,
         addWord,
         fetchData,
+        deleteWord,
     }
 
     return <WordContext.Provider value={value}>{children}</WordContext.Provider>

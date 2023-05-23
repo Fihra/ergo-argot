@@ -25,6 +25,16 @@ const WordReducer = (state, action) => {
                 ...state,
                 currentList: newList
             }
+        case ACTIONS.DELETE_WORD:
+            const deletedList = [...state.currentList].filter(word => {
+                if(word !== payload.word) {
+                    return word;
+                }
+            })
+            return {
+                ...state,
+                currentList: deletedList
+            }
         default:
             return state;
     }
