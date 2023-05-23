@@ -13,7 +13,10 @@ const WordInput = () => {
             addWord(currentWord);
           try {
             const response = await axios.request(fetchWord(currentWord));
-            fetchData(response.data);
+            if(response.data.list.length >= 1){
+              fetchData(response.data);
+            }
+            
           } catch(error) {
             console.log(error);
           }
