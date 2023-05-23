@@ -13,25 +13,18 @@ const Topbar = () => {
         <View>
             <Text onPress={() => setOpen((prevOpen) => !prevOpen)} title={`${open ? 'Close' : 'Open'} drawer`}>
                 <FontAwesomeIcon icon={faBars} size="2x" style={{marginLeft: "60vw"}}/>
-                <View>
-                  <Text>Drawer Content</Text>
+                <View style={{height: "80vw", width: "80vw", backgroundColor: "blue", zIndex: 1}}>
+                  <Text style={{color: "white"}}>Drawer Content</Text>
                 </View>
             </Text>
          </View>
 
       )
-    } else {
-      return;
     }
 
   }
 
   return (
-    // <View>
-    //   <Text onPress={handleClick} >
-    //     <FontAwesomeIcon icon={faBars} size="3x" style={{marginRight: "80vw"}}/>
-    //   </Text>
-    // </View>
     <View style={{position: "absolute"}}>
     <Drawer
     open={open}
