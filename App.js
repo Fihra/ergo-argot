@@ -1,6 +1,6 @@
 import { registerRootComponent } from 'expo';
 import { StatusBar } from 'expo-status-bar';
-import { Text, View} from 'react-native';
+import { Text, SafeAreaView, View} from 'react-native';
 import styles from './components/styles';
 import React from 'react';
 import Topbar from './components/Topbar';
@@ -14,7 +14,7 @@ import 'react-native-gesture-handler';
 
 const App = () => {
   return (
-
+    <SafeAreaView style={{flex: 1, backgroundColor: "#C8837E"}}>
       <View style={styles.container}>
         <StatusBar hidden={false}/>
         {/* <Topbar/> */}
@@ -28,7 +28,7 @@ const App = () => {
           </View>
         </WordProvider>
       </View>
-
+    </SafeAreaView>
   );
 }
 
