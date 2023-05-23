@@ -8,8 +8,8 @@ const UrbanCard = () => {
     const showCard = () => {
         if(data !== "") {
             return (
-                <View style={{}}>
-                <Text>Word: {data.list[0].word}</Text>
+                <View style={{maxHeight: 300}}>
+                <Text>Word: <Text style={{fontWeight: "bold"}}>{data.list[0].word}</Text></Text>
                 <Text>Definition: {data.list[0].definition}</Text>
                 <Text>Example: {data.list[0].example}</Text>
                 <Pressable style={styles.button}>
