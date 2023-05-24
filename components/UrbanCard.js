@@ -8,7 +8,7 @@ const UrbanCard = () => {
     const showCard = () => {
         if(data !== "") {
             return (
-                <View style={{maxHeight: "80vw"}}>
+                <View style={styles.urbanContainer}>
                 <Text>Word: <Text style={{fontWeight: "bold"}}>{data.list[0].word}</Text></Text>
                 <Text>Definition: {data.list[0].definition}</Text>
                 <Text>Example: {data.list[0].example}</Text>
