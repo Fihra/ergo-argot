@@ -15,8 +15,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         top: 30,
         fontSize: 24,
-        fontWeight: 'bold',
-        color: "white",
+        fontWeight: 'bold'
       },
       button: {
         width: 100,
@@ -26,6 +25,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 4,
+      },
+      urbanContainer: {
+        maxHeight: "90vw",
+        marginBottom: 100
       }
 });
 
