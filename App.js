@@ -14,7 +14,7 @@ import 'react-native-gesture-handler';
 
 const App = () => {
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: "#C8837E"}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: "#DBE3FA"}}>
       <View style={styles.container}>
         <StatusBar hidden={false}/>
         {/* <Topbar/> */}
