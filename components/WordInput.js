@@ -4,17 +4,21 @@ import { REACT_APP_API_URL, REACT_APP_KEY, REACT_APP_HOST } from '@env';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { Word } from './classes/Word';
 
 const WordInput = () => {
     const { setWord, addWord, currentList, currentWord, fetchData } = useWord();
 
     const handleSubmit = async () => {
         if(!currentList.includes(currentWord)){
-            addWord(currentWord);
+            // addWord(currentWord);
           try {
             const response = await axios.request(fetchWord(currentWord));
             if(response.data.list.length >= 1){
               fetchData(response.data);
+
+              const newWord = Word(currentWord, response.data);
+              addWord(newWord);
             }
             
           } catch(error) {
@@ -40,7 +44,7 @@ const WordInput = () => {
     <View style={{flexDirection: 'row'}}>
         <TextInput
         style={{padding: 12}}
-        placeholder="Search me up"
+        placeholder="Search here"
         onChangeText={newText => setWord(newText)}
         default={currentWord}
         value={currentWord}
@@ -48,7 +52,6 @@ const WordInput = () => {
         <Text onPress={handleSubmit}>
         <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" style={{marginLeft: 12, marginTop: 4}}/>
         </Text>
-        {/* <Button style={{marginLeft: 12}} onPress={handleSubmit} title="Search"></Button> */}
     </View>
 
   )
