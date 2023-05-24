@@ -26,6 +26,13 @@ export const WordProvider = ({ children }) => {
         })
     }
 
+    const changeWord = (word) => {
+        dispatch({
+            type: ACTIONS.CHANGE_WORD,
+            payload: { word: word}
+        })
+    }
+
     const deleteWord = (deletedWord) => {
         dispatch({
             type: ACTIONS.DELETE_WORD,
@@ -39,12 +46,12 @@ export const WordProvider = ({ children }) => {
         currentWord: state.currentWord,
         setWord,
         addWord,
+        changeWord,
         fetchData,
         deleteWord,
     }
 
     return <WordContext.Provider value={value}>{children}</WordContext.Provider>
-
 }
 
 const useWord = () => {

@@ -21,9 +21,17 @@ const WordReducer = (state, action) => {
             }
         case ACTIONS.ADD_WORD:
             const newList = [payload.word, ...state.currentList];
+            if(newList.length > 5){
+                newList.pop();
+            }
             return {
                 ...state,
                 currentList: newList
+            }
+        case ACTIONS.CHANGE_WORD:
+            return {
+                ...state,
+                currentWord: payload.word
             }
         case ACTIONS.DELETE_WORD:
             const deletedList = [...state.currentList].filter(word => {
