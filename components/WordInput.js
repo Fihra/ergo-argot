@@ -11,14 +11,11 @@ const WordInput = () => {
 
     const handleSubmit = async () => {
         if(!currentList.includes(currentWord)){
-            // addWord(currentWord);
+            addWord(currentWord);
           try {
             const response = await axios.request(fetchWord(currentWord));
             if(response.data.list.length >= 1){
               fetchData(response.data);
-
-              const newWord = Word(currentWord, response.data);
-              addWord(newWord);
             }
             
           } catch(error) {
