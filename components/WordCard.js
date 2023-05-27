@@ -44,8 +44,8 @@ const WordCard = (props) => {
     }
 
     return (
-        <Text>
-            <Text onPress={() => handleClick(word)} value={word}>{word}</Text><Text onPress={handleDelete}><FontAwesomeIcon icon={faX} style={{paddingRight: 12, color: "red"}}/></Text>
+        <Text style={{flex: 1, flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'center'}}>
+            <Text style={{flexBasis: '50%'}} onPress={() => handleClick(word)} value={word}>{word}</Text><Text style={{flexBasis: '50%'}} onPress={handleDelete}><FontAwesomeIcon icon={faX} style={{color: "red"}}/></Text>
         </Text> 
     )
 };
