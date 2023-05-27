@@ -1,4 +1,4 @@
-import { Text, View, Button, Linking, Pressable } from 'react-native';
+import { Text, View, Button, Linking, Pressable, ScrollView } from 'react-native';
 import useWord from '../context/WordContext';
 import styles from './styles';
 
@@ -8,14 +8,16 @@ const UrbanCard = () => {
     const showCard = () => {
         if(data !== "") {
             return (
-                <View style={styles.urbanContainer}>
-                <Text>Word: <Text style={{fontWeight: "bold"}}>{data.list[0].word}</Text></Text>
-                <Text>Definition: {data.list[0].definition}</Text>
-                <Text>Example: {data.list[0].example}</Text>
-                <Pressable style={styles.button}>
-                <Button onPress={() => Linking.openURL(data.list[0].permalink)} title="Link"/>
-                </Pressable>
-                </View>
+                <ScrollView style={styles.urbanContainer}>
+                    <View>
+                    <Text>Word: <Text style={{fontWeight: "bold"}}>{data.list[0].word}</Text></Text>
+                    <Text>Definition: {data.list[0].definition}</Text>
+                    <Text>Example: {data.list[0].example}</Text>
+                    <Pressable style={styles.button}>
+                    <Button onPress={() => Linking.openURL(data.list[0].permalink)} title="Link"/>
+                    </Pressable>
+                    </View>
+                </ScrollView>
             )
         }
     }
