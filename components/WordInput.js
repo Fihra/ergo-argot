@@ -4,7 +4,6 @@ import { REACT_APP_API_URL, REACT_APP_KEY, REACT_APP_HOST } from '@env';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { Word } from './classes/Word';
 
 const WordInput = () => {
     const { setWord, addWord, currentList, currentWord, fetchData } = useWord();
@@ -22,6 +21,7 @@ const WordInput = () => {
             console.log(error);
           }
         }
+        setWord('');
     }
 
     const fetchWord = (word) => {
