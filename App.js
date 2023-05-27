@@ -1,10 +1,7 @@
-import { registerRootComponent } from 'expo';
 import { StatusBar } from 'expo-status-bar';
 import { Text, SafeAreaView, View} from 'react-native';
 import styles from './components/styles';
 import React from 'react';
-import Topbar from './components/Topbar';
-import Sidebar from './components/Sidebar';
 import List from './components/List';
 import WordInput from './components/WordInput';
 import UrbanCard from './components/UrbanCard';
@@ -17,7 +14,6 @@ const App = () => {
     <SafeAreaView style={{flex: 1, backgroundColor: "#DBE3FA"}}>
       <View style={styles.container}>
         <StatusBar hidden={false}/>
-        {/* <Topbar/> */}
         <Text style={styles.title}>Ergo Argot</Text>
         <WordProvider>
         <View>
@@ -33,4 +29,3 @@ const App = () => {
 }
 
 export default App;
-// registerRootComponent(App);

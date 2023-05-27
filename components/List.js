@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { Text, View } from 'react-native';
 import useWord from '../context/WordContext';
 import WordCard from './WordCard';
 

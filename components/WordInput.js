@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { Text, View, TextInput } from 'react-native';
 import useWord from '../context/WordContext';
 import { REACT_APP_API_URL, REACT_APP_KEY, REACT_APP_HOST } from '@env';
 import axios from 'axios';
