@@ -22,20 +22,18 @@ const styles = StyleSheet.create({
         top: 50
       }, 
       button: {
-        width: 160,
-        height: 80,
+        padding: 5,
         flex: 1,
-        alignItems: 'center',
         justifyContent: 'center',
-        borderColor: 'red',
         borderRadius: 50,
+        marginHorizontal: -20
       },
       urbanContainer: {
-        maxHeight: 150,
-        marginTop: 40,
-        marginLeft: 10,
-        marginRight: 10,
-        marginBottom: 50
+        maxHeight: 180,
+        marginTop: 50,
+        marginLeft: 5,
+        marginRight: 5,
+        marginBottom: 10
       },
       listButton: {
         justifyContent: 'flex-end',
