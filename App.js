@@ -10,13 +10,14 @@ import { WordProvider } from './context/WordContext';
 import 'react-native-gesture-handler';
 
 const App = () => {
+
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: "#DBE3FA"}}>
       <View style={styles.container}>
         <StatusBar hidden={false}/>
         <Text style={styles.title}>Ergo Argot</Text>
         <WordProvider>
-        <View>
+        <View style={styles.mainSection}>
           <UrbanCard/>
           <Line/>
           <WordInput/>
