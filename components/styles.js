@@ -13,25 +13,33 @@ const styles = StyleSheet.create({
       },
       title: {
         position: "absolute",
-        top: 30,
+        top: 50,
         fontSize: 24,
         fontWeight: 'bold'
       },
+      mainSection: {
+        position: "absolute",
+        top: 50
+      }, 
       button: {
-        width: 100,
-        height: 100,
+        width: 160,
+        height: 80,
         flex: 1,
-        paddingTop: 12,
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 4,
+        borderColor: 'red',
+        borderRadius: 50,
       },
       urbanContainer: {
-        maxHeight: "90vw",
-        marginTop: 50,
+        maxHeight: 150,
+        marginTop: 40,
         marginLeft: 10,
         marginRight: 10,
-        marginBottom: 100
+        marginBottom: 50
+      },
+      listButton: {
+        justifyContent: 'flex-end',
+        paddingHorizontal: 50
       }
 });
 
