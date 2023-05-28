@@ -1,9 +1,8 @@
-import { Text } from 'react-native';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faX } from '@fortawesome/free-solid-svg-icons';
+import { View, Text, Button, TouchableOpacity } from 'react-native';
 import useWord from '../context/WordContext';
 import { REACT_APP_API_URL, REACT_APP_KEY, REACT_APP_HOST } from '@env';
 import axios from 'axios';
+import styles from './styles';
 
 const WordCard = (props) => {
     const { currentList, fetchData, changeWord, deleteWord } = useWord();
@@ -44,9 +43,15 @@ const WordCard = (props) => {
     }
 
     return (
-        <Text style={{flex: 1, flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'center'}}>
-            <Text style={{flexBasis: '50%'}} onPress={() => handleClick(word)} value={word}>{word}</Text><Text style={{flexBasis: '50%'}} onPress={handleDelete}><FontAwesomeIcon icon={faX} style={{color: "red"}}/></Text>
-        </Text> 
+        <View style={{flexDirection: "row"}}>
+            <Text style={{justifyContent: 'flex-start', paddingHorizontal: 10}} onPress={() => handleClick(word)} value={word}>{word}
+            <TouchableOpacity style={styles.listButton}>
+            <Button onPress={handleDelete} title="X"/>
+            </TouchableOpacity>
+            </Text>
+           
+            
+        </View> 
     )
 };
 
