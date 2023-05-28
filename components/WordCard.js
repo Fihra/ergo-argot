@@ -43,13 +43,12 @@ const WordCard = (props) => {
     }
 
     return (
-        <View style={{flexDirection: "row"}}>
-            <Text style={{justifyContent: 'flex-start', paddingHorizontal: 10}} onPress={() => handleClick(word)} value={word}>{word}
-            <TouchableOpacity style={styles.listButton}>
-            <Button onPress={handleDelete} title="X"/>
-            </TouchableOpacity>
+        <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
+            <Text style={{flex: 1, justifyContent: 'flex-start', marginVertical: 10}} onPress={() => handleClick(word)} value={word}>{word}
             </Text>
-           
+            <TouchableOpacity style={{ flex: 1, justifyContent: 'flex-end', marginHorizontal: 100, marginVertical: 5}}>
+            <Button color="red" onPress={handleDelete} title="X"/>
+            </TouchableOpacity>
             
         </View> 
     )
