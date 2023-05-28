@@ -1,8 +1,9 @@
-import { View, TextInput, Button, KeyboardAvoidingView } from 'react-native';
+import { View, TextInput, Button, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 import useWord from '../context/WordContext';
 import { REACT_APP_API_URL, REACT_APP_KEY, REACT_APP_HOST } from '@env';
 import axios from 'axios';
 import styles from './styles';
+import Line from './Line';
 
 const WordInput = () => {
     const { setWord, addWord, currentList, currentWord, fetchData } = useWord();
@@ -37,17 +38,19 @@ const WordInput = () => {
     }
 
   return (
-    <View style={{marginTop: 50, flexDirection: 'row'}}>
+    <View style={{marginTop: 50, flexDirection: 'column'}}>
         <KeyboardAvoidingView behavior='height' style={{flex: 1}}>
           <TextInput
-          style={{padding: 12}}
+          style={{flex: 1, width: 200, alignItems: 'stretch'}}
           placeholder="Search here"
           onChangeText={newText => setWord(newText)}
           default={currentWord}
           value={currentWord}
           />
         </KeyboardAvoidingView>
-        <Button style={styles.button} onPress={handleSubmit} title="Submit"/>
+        <TouchableOpacity style={styles.button}>
+            <Button color='green' onPress={handleSubmit} title="Submit"/>
+        </TouchableOpacity>
     </View>
 
   )
