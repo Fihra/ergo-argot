@@ -1,9 +1,8 @@
-import { Text, View, TextInput } from 'react-native';
+import { View, TextInput, Button, KeyboardAvoidingView } from 'react-native';
 import useWord from '../context/WordContext';
 import { REACT_APP_API_URL, REACT_APP_KEY, REACT_APP_HOST } from '@env';
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import styles from './styles';
 
 const WordInput = () => {
     const { setWord, addWord, currentList, currentWord, fetchData } = useWord();
@@ -38,17 +37,17 @@ const WordInput = () => {
     }
 
   return (
-    <View style={{flexDirection: 'row'}}>
-        <TextInput
-        style={{padding: 12}}
-        placeholder="Search here"
-        onChangeText={newText => setWord(newText)}
-        default={currentWord}
-        value={currentWord}
-        />
-        <Text onPress={handleSubmit}>
-        <FontAwesomeIcon icon={faMagnifyingGlass} size="2x" style={{marginLeft: 12, marginTop: 4}}/>
-        </Text>
+    <View style={{marginTop: 50, flexDirection: 'row'}}>
+        <KeyboardAvoidingView behavior='height' style={{flex: 1}}>
+          <TextInput
+          style={{padding: 12}}
+          placeholder="Search here"
+          onChangeText={newText => setWord(newText)}
+          default={currentWord}
+          value={currentWord}
+          />
+        </KeyboardAvoidingView>
+        <Button style={styles.button} onPress={handleSubmit} title="Submit"/>
     </View>
 
   )
