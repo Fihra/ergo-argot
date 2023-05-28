@@ -12,7 +12,7 @@ const List = () => {
     }
 
     return (
-        <View style={{flex: 1, margin: 10}}>
+        <View style={{flex: 1, margin: 10, justifyContent: 'center'}}>
             <Text>Words Searched: {"\n"}</Text>
             {showList()}
         </View>
