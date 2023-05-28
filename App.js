@@ -5,12 +5,10 @@ import React from 'react';
 import List from './components/List';
 import WordInput from './components/WordInput';
 import UrbanCard from './components/UrbanCard';
-import Line from './components/Line';
 import { WordProvider } from './context/WordContext';
 import 'react-native-gesture-handler';
 
 const App = () => {
-
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: "#DBE3FA"}}>
       <View style={styles.container}>
@@ -19,7 +17,6 @@ const App = () => {
         <WordProvider>
         <View style={styles.mainSection}>
           <UrbanCard/>
-          <Line/>
           <WordInput/>
           <List/>
           </View>
