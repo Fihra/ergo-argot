@@ -1,11 +1,11 @@
-import { Text, View, Button, Linking, Pressable, ScrollView, ToastAndroid } from 'react-native';
+import { Text, View, Button, Linking, Pressable, ScrollView, ToastAndroid, Platform } from 'react-native';
 import useWord from '../context/WordContext';
 import styles from './styles';
 
 const UrbanCard = () => {
     const { data } = useWord();
 
-    showMoreScroll = () => {
+    const showMoreScroll = () => {
         ToastAndroid.showWithGravity("Scroll for more", ToastAndroid.SHORT, ToastAndroid.TOP);
       }
 
@@ -13,7 +13,7 @@ const UrbanCard = () => {
         if(data !== "") {
             return (
                 <ScrollView style={styles.urbanContainer}>
-                    {showMoreScroll()}
+                    {Platform.OS === 'android' ? showMoreScroll() : null}
                     <View>
                     <Text>Word: <Text style={{fontWeight: "bold"}}>{data.list[0].word}</Text></Text>
                     <Text>Definition: {data.list[0].definition}</Text>
