@@ -16,7 +16,8 @@ It will also keep track of your latest 5 searches in a list.
 **Android** only
 
 ### Download Link:
-[Apk File Download](https://expo.dev/artifacts/eas/vCuAaUX5RUH1YdrXAXJq9j.apk)
+[Apk File Download](https://expo.dev/artifacts/eas/rnHVM357fgiaNs99FLTqDC.apk)
+
 
 ### Instructions:
 1. Click on download link above
