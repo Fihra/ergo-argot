@@ -2,7 +2,6 @@ import { View, Text, Button, TouchableOpacity } from 'react-native';
 import useWord from '../context/WordContext';
 import { REACT_APP_API_URL, REACT_APP_KEY, REACT_APP_HOST } from '@env';
 import axios from 'axios';
-import styles from './styles';
 
 const WordCard = (props) => {
     const { currentList, fetchData, changeWord, deleteWord } = useWord();
