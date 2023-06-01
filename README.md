@@ -12,6 +12,9 @@ It will also keep track of your latest 5 searches in a list.
 - Axios
 - Urban Dictionary API
 
+### Available on Web:
+[Ergo Argot](https://ergo-argot.netlify.app/)
+
 ### Mobile Device Support:
 **Android** only
 
