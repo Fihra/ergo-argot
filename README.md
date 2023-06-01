@@ -1,6 +1,6 @@
 # Ergo Argot
 
-![ergo-argo demo](./assets/ergo-argot-demo.gif)
+<img src="./assets/ergo-argot-demo.gif" width="200" height="400" alt="ergo-argot demo">
 
 This is a small mobile app. Search for a word, phrase, acronym from internet slang and receive the first definition result of it based on the Urban Dictionary API.
 
