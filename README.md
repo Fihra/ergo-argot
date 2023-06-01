@@ -21,5 +21,5 @@ It will also keep track of your latest 5 searches in a list.
 ### Instructions:
 1. Click on download link above
 2. Drag and drop apk file in Android devices folder (where you keep your apps or files, it can be in any folder)
-3. In your Android device, open the apk file. It will give a warning about installing the device, allow it and it should install.
-4. Open the app "ergo-argot" and it should be ready to go.
+3. In your Android device, open the apk file. It will give an "Unsafe app blocked" warning about installing the device. Click "More Details" and "Install anyway".
+4. Open the app "Ergo Argot" and it should be ready to go.
